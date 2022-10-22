@@ -23,20 +23,16 @@ btnAnterior.addEventListener('click', () => {
 
 });
 
-function getInputValue() {
-    // Selecting the input element and get its value 
-    var inputVal = document.getElementById("myInput").value
-    //console.log(inputVal)
-    return inputVal
-        //console.log(inputVal)
 
-        // Displaying the value
-        //alert(inputVal)
+function getInputValue() {
+    var inputVal = document.getElementById("myInput").value
+    return inputVal
         ;
 }
 
 valor = getInputValue();
-console.log(valor);
+// console.log(valor);
+
 //valor = 'nicolas'
 
 // const respuesta = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=fd5e373641ded13be888fbabc64d709a&language=en-US&query=${demo}&page=1&include_adult=false${pagina}`);
@@ -44,10 +40,24 @@ console.log(valor);
 
 
 
-mybutton.addEventListener('click', () => {
+/* Listening for a click event on the button with the id of BotonBuscar. When the button is clicked, it
+calls the function cargarPeliculas. */
+BotonBuscar.addEventListener('click', () => {
     cargarPeliculas();
 });
 
+myInput.addEventListener('keypress', () => {
+    cargarPeliculas();
+});
+
+/*
+myInput.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        cargarPeliculas();
+
+    }
+});
+*/
 
 const cargarPeliculas = async () => {
     try {
@@ -91,8 +101,4 @@ const cargarPeliculas = async () => {
     }
 
 }
-
-
-
-//cargarPeliculas('Mortal');
 
